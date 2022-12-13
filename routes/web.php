@@ -14,10 +14,10 @@ use App\Http\Controllers\TabunganController;
 |
 */
 
-Route::get('/index', function(){
-    return view('welcome');
-});
 
 Route::get('/', [TabunganController::class, 'index'])->name('index');
 Route::post('/store', [TabunganController::class, 'store'])->name('store');
+Route::get('/indexEditTabungan/{id}', [TabunganController::class, 'indexEditTabungan'])->name('indexEditTabungan');
+Route::post('/updateTabungan/{id}', [TabunganController::class, 'updateTabungan'])->name('updateTabungan');
+Route::post('/deleteTabungan/{id}', [TabunganController::class, 'deleteTabungan'])->name('deleteTabungan');
 
